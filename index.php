@@ -13,8 +13,8 @@
     <div class="header">
         <img src="img/logo.png" alt="">
         <select name="genre">
-        <?php foreach ($disks as $disk) { ?>
-            <option value=<?php echo $disk['genre'] ?>><?php echo $disk['genre'] ?></option>
+        <?php foreach ($genres as $genre) { ?>
+            <option value=<?php echo $genre ?>><?php echo $genre ?></option>
         <?php } ?>
         </select>
 

@@ -1,0 +1,48 @@
+@import 'colors';
+@import 'variables';
+
+* {
+    @include reset;
+}
+
+.wrapper {
+    width: 100vw;
+    min-height: 100vh;
+    background: $black;
+
+    .header {
+        width: 100%;
+        height: 70px;
+        background: $darkGray;
+    }
+
+    .container {
+        width: 100%;
+        height: calc(100% - 70px);
+        
+
+        .content {
+            width: 1070px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            
+
+            &-box {
+                flex-basis: 200px;
+                background: $darkGray;
+                height: 300px;
+
+                img {
+                    max-width: 100%;
+                    margin-top: 10px;
+                }
+            }
+
+        }
+
+        
+    }
+}

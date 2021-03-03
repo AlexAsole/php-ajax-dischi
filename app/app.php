@@ -4,6 +4,8 @@
 
     header('Content-Type: application/json');
 
+
+    $filterDisk =[];
     $genres = [];
     foreach($disks as $disk){
         if(!in_array( $disk['genre'] ,$genres )){
@@ -22,7 +24,7 @@
     
         
         if (!empty($_GET['genre']) ) {
-            $filterDisk =[];
+            
             foreach($disks as $disk){
                 if(strpos($disk['genre'] , $_GET['genre']) !== false ){
                     $filterDisk[] = $disk;

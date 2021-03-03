@@ -37,7 +37,7 @@ new Vue({
                 })
                 .catch(function (error) {
                     console.log(error.message);
-                    self.error = `Il genere selezionato non è riconosciuto ${error.message}`;
+                    self.error = `Riprova più tardi: ${error.message}`;
                     self.diskList = []
                 })
         }

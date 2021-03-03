@@ -5,11 +5,11 @@
     @include reset;
 }
 
-
+body {
+    background: $black;
+}
 
 .wrapper {
-    
-    background: $black;
     font-family: $font;
     display: flex;
     flex-direction: column;
@@ -40,6 +40,10 @@
         flex-wrap: wrap;
         justify-content: space-around;
         margin: 50px 0;
+
+        .error {
+            color: $white;
+        }
         
             
         .box {
@@ -50,6 +54,7 @@
             align-items: center;
             margin: 10px 20px;
             padding: 20px;
+            max-height: 360px;
 
             img {
                 max-width: $max;

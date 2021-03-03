@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src='https://cdn.jsdelivr.net/npm/vue'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='css/style.css'>
+    <title>Bool-Music</title>
+</head>
+<body>
+    <div id='root'>
+        <div class="wrapper">
+            <div class="header">
+                <img src="img/logo.png" alt="">
+                <select name="genre">
+                    
+                </select>
+            </div>
+            <div class="container">
+                <div v-for="disk in diskList" class="box">
+                    <img :src=disk.poster alt="">
+                    <div class="title">{{disk.title}}</div>
+                    <div class="author">{{disk.author}}</div>
+                    <div class="year">{{disk.year}}</div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src='js/script.js' charset='utf-8'></script>
+    
+</body>
+</html>

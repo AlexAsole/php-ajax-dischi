@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . '/app/app.php'; ?>
+<?php require_once __DIR__ . '/database/database.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,31 +13,21 @@
     <div class="header">
         <img src="img/logo.png" alt="">
         <select name="genre">
-        <?php foreach ($genres as $genre) { ?>
-            <option value=<?php echo $genre ?>><?php echo $genre ?></option>
+        <?php foreach ($disks as $disk) { ?>
+            <option value=<?php echo $disk['genre'] ?>><?php echo $disk['genre'] ?></option>
         <?php } ?>
         </select>
-
-    
     </div>
     <div class="container">
-        
         <?php foreach ($disks as $disk) { ?>
         <div class="box">
             <img src= <?php echo $disk['poster'] ?> alt="">
             <div class="title"><?php echo $disk['title'] ?></div>
             <div class="author"><?php echo $disk['author'] ?></div>
             <div class="year"><?php echo $disk['year'] ?></div>
-            
         </div>
         <?php } ?>
-
-        
-        
     </div>
-
-
 </div>
-    
 </body>
 </html>

@@ -1,7 +1,10 @@
 new Vue({
     el: '#root',
     data: {
-        diskList: []
+        diskList: [],
+        genreList: [],
+        genre: 'All',
+        error: ''
     },
     mounted() {
         const self = this;
@@ -10,7 +13,34 @@ new Vue({
             .then(function(resp) {
                 let disks = resp.data;
                 self.diskList = disks;
+                self.diskList.forEach((disk) => {
+                    if (!self.genreList.includes(disk.genre)) {
+                        self.genreList.push(disk.genre)
+                    }
+                });
+
             })
+    },
+    methods: {
+        filterByGenre: function() {
+            this.error = '';
+            const self = this;
+            axios
+                .get("http://localhost/github/php-ajax-dischi/app/app.php", {
+                    params: {
+                        genre: self.genre
+                    }
+                })
+                .then(function(resp) {
+                    let disks = resp.data;
+                    self.diskList = disks;
+                })
+                .catch(function (error) {
+                    console.log(error.message);
+                    self.error = `Il genere selezionato non è riconosciuto ${error.message}`;
+                    self.diskList = []
+                })
+        }
     }
 });
 
